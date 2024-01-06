@@ -1,4 +1,6 @@
 from manim import *
+from manim.opengl import *
+import manim.utils.opengl as opengl
 
 class ThreeDPlot(ThreeDScene):
 
@@ -17,6 +19,7 @@ class ThreeDPlot(ThreeDScene):
                 walls.add(wall)
         return walls
 
+    OpenGL
 
     def construct(self):
 
@@ -48,7 +51,7 @@ class ThreeDPlot(ThreeDScene):
         u_min, u_max = -2 , 2
         v_min, v_max = -2 , 2
 
-
+        
         #assi cartesiani tridimensionali
         x_min , x_max , x_step = -5 , 5 , 1
         y_min , y_max , y_step = -5 , 5 , 1
@@ -77,7 +80,7 @@ class ThreeDPlot(ThreeDScene):
             fill_opacity=1)
 
 
-        d_graph = 2                                                                                   #differenziale per la generazione di Prismi
+        d_graph = 1                                                                                  #differenziale per la generazione di Prismi
         d_calc = 100                                                                                   #differenziale per il calcolo del volume
         walls = self.create_walls(math_function, dx=1.0/d_graph, dy=1.0/d_graph, dz=1.0/d_graph)      #VGroup di Prismi
         value = Integral_sum(math_function, dx=1.0/d_calc, dy=1.0/d_calc, dz=1.0/d_calc)              #valore della somma integrale    
